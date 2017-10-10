@@ -1,10 +1,10 @@
-#!/user/bin/env python3
+#!/user/bin/env python3                       ### should be: #!/usr/bin/env python3
 
 def coord_for(n, a, b):
     h=(b-a)/n
-    for_list = []
+    for_list = []                  ### This list is never used
     for i in range (n+1):
-        list.append(a+i*h)
+        list.append(a+i*h)         ### the variable "list" is undefined. It is also conflicting with a python keyword
     return list
 
 def coord_while(n, a, b):
@@ -22,8 +22,8 @@ def coord_comp(n, a, b):
 
 
 if _name_ == "_main_":
-    n = (input("interval number: ")
-    a = (input("lower bound: ")
+    n = (input("interval number: ")        ### Note: never use the input() function. Instead pass commandline arguments
+    a = (input("lower bound: ")            ### See sys.argv for how to do this
     b = (input("upper bound: ")
     for_list = coord_for(n, a, b)
     while_list = coord_while(n, a, b)
