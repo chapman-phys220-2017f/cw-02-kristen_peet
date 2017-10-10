@@ -1,4 +1,4 @@
-#!/usr/bin/bash env python3
+#!/usr/bin/bash env python3       ### Should be #!/usr/bin/env python3
 
 def fibonacci(n):
     fib_list = []
@@ -7,8 +7,8 @@ def fibonacci(n):
     while n > 0:
         fib_list.append(b)
         a, b = b, a+b
-        n = n-1
-        return (fib_list)
+        n = n-1                  ### You can also use:  n -= 1
+        return (fib_list)        ### return does not need parentheses
 
 
 def fibs_generator():
@@ -19,7 +19,7 @@ def fibs_generator():
 
 
 if __name__ == "__main__":
-    n = input("n value: ")
+    n = input("n value: ")      ### See comment about input() in coords file
     print(fibonacci(n))
     g = fibs_generator()
     fibs_list = [next(g) for _ in range(5)]
